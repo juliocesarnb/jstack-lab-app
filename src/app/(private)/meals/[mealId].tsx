@@ -25,7 +25,8 @@ export default function MealDetails() {
   const { mealId } = useLocalSearchParams();
 
   const { data: meal, isFetching } = useQuery({
-    queryKey: ['meal'],
+    queryKey: ['meal', mealId],
+    staleTime: 500000,
     queryFn: async () => {
       const { data } = await httpClient.get<{ meal: Meal }>(`/meals/${mealId}`);
 
