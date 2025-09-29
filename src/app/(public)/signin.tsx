@@ -35,7 +35,7 @@ export default function SignIn() {
       console.log(error);
       Alert.alert('Credenciais inválidas!');
     }
-  });
+  }); 
 
   return (
     <AuthLayout
